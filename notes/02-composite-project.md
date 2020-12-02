@@ -122,6 +122,12 @@ try running this from the root of your project now
 yarn tsc -b packages
 ```
 
+or inside packages
+
+```sh
+tsc -b .
+```
+
 both `types` and `utils` should build!
 
 ## Squeaky Clean
@@ -131,7 +137,7 @@ Each package we create will put its build output in its own folder, so we should
 We can install a _workspace_ dependency (at the root of the project, not a dependency of any package) to handle this in a platform-independent way:
 
 ```sh
-yarn -WD rimraf
+yarn add -W -D rimraf
 ```
 
 Then, go to `types/package.json` and `utils.package.json` and make this small change
